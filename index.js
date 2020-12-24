@@ -1,10 +1,10 @@
-const exrpress = require('express')
+const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const taskRoute = require('./routes/taskRoute')
 const userRoute = require('./routes/userRoute')
 
-const app = exrpress()
+const app = express()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
