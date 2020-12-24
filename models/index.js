@@ -3,7 +3,7 @@ require('dotenv').config()
 const Task = require('./taskSchema')
 const User = require('./userSchema')
 
-const dbUrl = process.env.DB_URL
+const dbUrl = process.env.MONGODB_URI
 
 mongoose.connect(dbUrl,{keepAlive:true,useCreateIndex:true,useUnifiedTopology:true,useNewUrlParser:true,useFindAndModify:false})
 .then(() => console.log("db connected"))
