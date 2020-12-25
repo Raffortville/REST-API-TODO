@@ -5,6 +5,9 @@ const authToken = require('../middlewares/auth');
 
 const router = express.Router()
 
+
+router.get('/fetchAll', controlers.fetchAllTasks);
+
 router.post('/createTask', controlers.postTask);
 
 router.get('/:id', controlers.getAllTasks);

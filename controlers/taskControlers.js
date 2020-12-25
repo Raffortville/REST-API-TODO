@@ -21,6 +21,20 @@ const postTask = async (req,res) => {
     }
 }
 
+const fetchAllTasks = async (req,res) => {
+
+    try {
+
+        const tasks = await db.Task.find({})
+
+        return res.status(202).send(tasks)
+        
+    } catch (error) {
+     
+        res.status(406).json({message : error})
+    }
+}
+
 const getAllTasks = async (req,res) => {
 
     try {
@@ -69,6 +83,6 @@ const updateTask = async (req,res) => {
     } catch (error) {res.status(400).send({message:error.message})}
 }
 
-const taskControlers = {postTask,getAllTasks,updateTask,getTaskById,deleteTask}
+const taskControlers = {postTask,getAllTasks,updateTask,getTaskById,deleteTask,fetchAllTasks}
 
 module.exports = taskControlers
