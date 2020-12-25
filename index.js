@@ -11,8 +11,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
 
-   /* https://vast-plains-10523.herokuapp.com/*/
-
 
     app.get('/', (req,res) => {
 

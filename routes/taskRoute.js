@@ -6,16 +6,14 @@ const authToken = require('../middlewares/auth');
 const router = express.Router()
 
 
-router.get('/fetchAll', controlers.fetchAllTasks);
+router.post('/createTask',authToken, controlers.postTask);
 
-router.post('/createTask', controlers.postTask);
+router.get('/:id',authToken, controlers.getAllTasks);
 
-router.get('/:id', controlers.getAllTasks);
+router.put('/:id', authToken, controlers.updateTask);
 
-router.put('/:id',  controlers.updateTask);
+router.get('/byId/:id',authToken, controlers.getTaskById);
 
-router.get('/byId/:id', controlers.getTaskById);
-
-router.delete('/:id', controlers.deleteTask);
+router.delete('/:id',authToken, controlers.deleteTask);
 
 module.exports = router
