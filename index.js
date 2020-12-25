@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const taskRoute = require('./routes/taskRoute')
 const userRoute = require('./routes/userRoute')
+const playerRoute = require('./routes/playerRoute')
 
 const app = express()
 
@@ -15,20 +16,17 @@ app.use(cors())
 
   const player = { name:"Payet", position :"milieu"} 
 
-app.get('/', (req,res) => {
+    app.get('/', (req,res) => {
 
     return res.send("test de l'API")
-})
+    })
 
-
-app.get('/player',(req,res) => {
-
-    res.json(player)
-})
 
 app.use('/tasks/', taskRoute)
 
 app.use('/users/',userRoute)
+
+app.use('/players/', playerRoute)
 
 const port =  process.env.PORT ||8080
 

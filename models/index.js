@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 const Task = require('./taskSchema')
 const User = require('./userSchema')
+const Player = require('./playerSchema')
 
 const dbUrl = process.env.MONGODB_URI
 
@@ -12,6 +13,6 @@ mongoose.connect(dbUrl,{keepAlive:true,useCreateIndex:true,useUnifiedTopology:tr
 mongoose.set("debug",true)
 mongoose.Promise = Promise
 
-const models = {Task,User}
+const models = {Task,User,Player}
 
 module.exports = models
