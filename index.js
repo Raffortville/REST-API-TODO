@@ -14,8 +14,6 @@ app.use(cors())
    /* https://vast-plains-10523.herokuapp.com/*/
 
 
-  const player = { name:"Payet", position :"milieu"} 
-
     app.get('/', (req,res) => {
 
     return res.send("test de l'API")

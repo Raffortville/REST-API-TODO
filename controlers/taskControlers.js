@@ -20,14 +20,13 @@ const postTask = async (req,res) => {
         res.status(407).json({message:error.message})
     }
 }
+const player = { name:"Payet", position :"milieu"} 
 
 const fetchAllTasks = async (req,res) => {
 
     try {
 
-        const tasks = await db.Task.find({})
-
-        return res.status(202).send(tasks)
+        return res.status(202).send(player)
         
     } catch (error) {
      
