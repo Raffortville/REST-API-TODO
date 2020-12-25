@@ -34,11 +34,11 @@ const loginUser = async (req,res) => {
 
         if(!user) return res.status(401).json({error:"User not found !"})
 
-        const validPass = await bcrypt.compareSync(req.body.password,user.password)
+        const validPass = bcrypt.compareSync(req.body.password,user.password)
 
         if(!validPass) return res.status(402).json({error :"Wrong password !"})
         
-        const token = await jwt.sign({id:user._id},process.env.SECRET_TOKEN)
+        const token = jwt.sign({id:user._id},process.env.SECRET_TOKEN)
 
         return res.status(200).send({username: user.username,email:user.email,token:token,userId:user._id})
   
