@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const taskRoute = require('./routes/taskRoute')
 const userRoute = require('./routes/userRoute')
-const playerRoute = require('./routes/playerRoute')
+
 
 const app = express()
 
@@ -21,8 +21,6 @@ app.use(cors())
 app.use('/tasks/', taskRoute)
 
 app.use('/users/',userRoute)
-
-app.use('/players/', playerRoute)
 
 const port =  process.env.PORT ||8080
 

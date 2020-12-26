@@ -11,7 +11,7 @@ const postTask = async (req,res) => {
 
     try {
 
-        const taskSaved =  await task.save()
+        const taskSaved = await task.save()
 
         return res.status(200).send(taskSaved)
     
